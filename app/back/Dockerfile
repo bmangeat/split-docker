@@ -9,9 +9,11 @@ RUN yarn install --immutable --immutable-cache --check-cache
 
 COPY --chown=node:node . .
 
-RUN yarn build
+CMD ["yarn", "start:dev"]
 
-CMD ["node", "dist/main.js"]
+# RUN yarn build
+
+# CMD ["node", "dist/main.js"]
 
 #docker run -p80:3000 nest-cloud-run
 
