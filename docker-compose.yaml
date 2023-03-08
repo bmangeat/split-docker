@@ -5,6 +5,7 @@ services:
   back:
     build:
       context: ./app/back
+      target: development-stage
     labels:
       - traefik.enable=true
       - traefik.http.routers.back_router.rule=${BACK_ROUTER_RULE}
@@ -16,6 +17,7 @@ services:
   front:
     build:
       context: ./app/front/
+      target: development-stage
     labels:
       - traefik.enable=true
       - traefik.http.routers.front_router.rule=${FRONT_ROUTER_RULE}
