@@ -1,9 +1,15 @@
 import { Module, CacheModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DatabaseModule } from './core/database/database.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [CacheModule.register({ isGlobal: true })],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    CacheModule.register({ isGlobal: true }),
+    DatabaseModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
