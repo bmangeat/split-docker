@@ -1,0 +1,40 @@
+{
+    "extends": [
+        "plugin:react-hooks/recommended",
+        "plugin:react/recommended",
+        "airbnb",
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+      "plugin:react/jsx-runtime"
+    ],
+    "plugins": [
+      "jsx-a11y",
+      "prettier"
+    ],
+    "rules": {
+      "semi": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+      "prettier/prettier": [
+        "error", {
+          "semi": false
+        }
+      ]
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "ecmaVersion": 13,
+        "sourceType": "module",
+        "project": ["./tsconfig.json"],
+      },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+      },
+  }
