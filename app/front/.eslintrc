@@ -6,7 +6,7 @@
         "airbnb-typescript",
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended",
-      "plugin:react/jsx-runtime"
+        "plugin:react/jsx-runtime"
     ],
     "plugins": [
       "jsx-a11y",
