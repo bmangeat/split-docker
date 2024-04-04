@@ -38,6 +38,3 @@ RUN yarn build
 
 
 
-#docker run -p3000:3000 splitfront
-
-

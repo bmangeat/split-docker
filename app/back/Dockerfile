@@ -7,13 +7,14 @@ FROM node:18-alpine AS development-stage
 USER node
 
 WORKDIR /var/www/html
-COPY --chown=node:node package*.json ./
+COPY --chown=node:node package.json ./
+COPY --chown=node:node yarn.lock ./
 
 RUN yarn install --immutable --immutable-cache --check-cache
 
 COPY --chown=node:node . .
 
-CMD ["yarn", "start:dev"]
+CMD ["sh", "-c", "yarn && yarn start:dev"]
 
 ###################
 # PRODUCTION STAGE
@@ -33,6 +34,3 @@ COPY --chown=node:node . .
 RUN yarn build
 
 CMD ["node", "dist/main.js"]
-
-#docker run -p80:3000 nest-cloud-run
-
